@@ -2,26 +2,6 @@ plugins {
     id 'java-library'
 }
 
-//group 'org.noveltaker'
-//version '1.0-SNAPSHOT'
-//
-//repositories {
-//    mavenCentral()
-//    maven { url "https://jitpack.io" }
-//}
-//
-//
-//dependencies {
-//    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-//    compileOnly "org.apache.tomcat:tomcat-servlet-api:${tomcatServletVersion}"
-//    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}"
-//}
-//
-//tasks.named('test') {
-//    useJUnitPlatform()
-//}
-
-
 allprojects {
     repositories {
         mavenCentral()
@@ -30,15 +10,8 @@ allprojects {
 }
 
 subprojects {
-
-//    apply plugin: 'java-libray'
-
     group 'org.noveltaker'
     version '1.0-SNAPSHOT'
     sourceCompatibility = '11'
     targetCompatibility = '11'
-
-//    dependencyManagement {
-//        imports {}
-//    }
 }
