@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
 group 'org.noveltaker'
@@ -9,11 +9,20 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+jar {
+    archiveFileName = 'health-check-servlet.jar'
+    enabled = true
+    manifest {
+        attributes('Implementation-Title': project.name, 'Implementation-Version': project.version)
+    }
 }
 
-test {
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    compileOnly "org.apache.tomcat:tomcat-servlet-api:${tomcatServletVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}"
+}
+
+tasks.named('test') {
     useJUnitPlatform()
 }
