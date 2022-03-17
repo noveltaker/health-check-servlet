@@ -1,2 +1,3 @@
 rootProject.name = 'health-check-servlet'
+include 'health-check-servlet-action'
 

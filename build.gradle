@@ -2,28 +2,43 @@ plugins {
     id 'java-library'
 }
 
-group 'org.noveltaker'
-version '1.0-SNAPSHOT'
+//group 'org.noveltaker'
+//version '1.0-SNAPSHOT'
+//
+//repositories {
+//    mavenCentral()
+//    maven { url "https://jitpack.io" }
+//}
+//
+//
+//dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+//    compileOnly "org.apache.tomcat:tomcat-servlet-api:${tomcatServletVersion}"
+//    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}"
+//}
+//
+//tasks.named('test') {
+//    useJUnitPlatform()
+//}
 
-repositories {
-    mavenCentral()
-    maven { url "https://jitpack.io" }
-}
 
-jar {
-    archiveFileName = 'health-check-servlet.jar'
-    enabled = true
-    manifest {
-        attributes('Implementation-Title': project.name, 'Implementation-Version': project.version)
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    compileOnly "org.apache.tomcat:tomcat-servlet-api:${tomcatServletVersion}"
-    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}"
-}
+subprojects {
 
-tasks.named('test') {
-    useJUnitPlatform()
+//    apply plugin: 'java-libray'
+
+    group 'org.noveltaker'
+    version '1.0-SNAPSHOT'
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
+
+//    dependencyManagement {
+//        imports {}
+//    }
 }
