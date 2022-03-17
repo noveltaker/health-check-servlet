@@ -1,7 +1,7 @@
 package org.noveltaker.healthcheck;
 
-import com.noveltaker.healthcheck.information.Information;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.noveltaker.healthcheck.information.Information;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
